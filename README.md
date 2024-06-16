@@ -81,8 +81,8 @@ class Comment(models.Model):
     likes = models.IntegerField(default=0)
 ```
 ## API Documentation
-User API
-Create User
+
+## Create User
 
 POST /api/users
 Request:
@@ -104,7 +104,7 @@ Response:
   "email": "john@example.com"
 }
 ```
-Update User
+## Update User
 
 PUT /api/users/:id
 Request:
@@ -121,7 +121,7 @@ Response:
   "name": "John Doe"
 }
 ```
-Delete User
+## Delete User
 
 DELETE /api/users/:id
 Response:
@@ -131,38 +131,34 @@ Response:
   "message": "User deleted successfully"
 }
 ```
-Show List of Users
+## Show List of Users
 
 GET /api/users
 Response:
 ```json
 
-[
   {
     "id": "uuid",
     "name": "John Doe",
     "email": "john@example.com"
   },
-  ...
-]
+
 ```
-Search User by Name
+## Search User by Name
 
 GET /api/users?name=John
 Response:
 ```json
 
-[
   {
     "id": "uuid",
     "name": "John Doe",
     "email": "john@example.com"
   },
-  ...
-]
+
 ```
 Post API
-Create Post
+## Create Post
 
 POST /api/posts
 Request:
@@ -185,7 +181,7 @@ Response:
   "created_on": "2023-06-14T12:00:00Z"
 }
 ```
-Update Post
+## Update Post
 
 PUT /api/posts/:id
 Request:
@@ -215,14 +211,13 @@ Get Posts by Tag
 GET /api/posts?tag=world
 Response:
 ```json
-[
+
   {
     "id": "uuid",
     "text": "Hello World!",
     "hashtags": ["#hello", "#world"]
   },
-  ...
-]
+
 ```
 Get Posts by Text
 
@@ -230,17 +225,16 @@ GET /api/posts?text=Hello
 Response:
 ```json
 
-[
+
   {
     "id": "uuid",
     "text": "Hello World!",
     "hashtags": ["#hello", "#world"]
   },
-  ...
-]
+
 ```
 Interaction API
-Like Post
+## Like Post
 
 POST /api/posts/:id/like
 Request:
@@ -256,9 +250,10 @@ Response:
   "message": "Post liked successfully"
 }
 ```
-Comment on Post
+## Comment on Post
 
 POST /api/posts/:id/comment
+
 Request:
 ```json
 {
@@ -267,6 +262,7 @@ Request:
 }
 ```
 Response:
+
 ```json
 {
   "id": "uuid",
@@ -276,22 +272,26 @@ Response:
   "created_on": "2023-06-14T12:00:00Z"
 }
 ```
-Like Comment
+## Like Comment
 
 POST /api/comments/:id/like
+
 Request:
+
 ```json
 
 {
   "user_id": "uuid"
 }
 ```
+
 Response:
 ```json
 {
   "message": "Comment liked successfully"
 }
 ```
+
 ## Setup Instructions
 
 Clone the repository:
