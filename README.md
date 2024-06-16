@@ -38,18 +38,20 @@ Storage: Local storage (can be integrated with AWS S3 for images)
 Architecture
 The system is structured into different Django apps: users and discussions.
 
-Components
-User App:
+## Components
 
+User App:
 Handles user creation, authentication, and profile management.
 Relevant files: users/models.py, users/serializers.py, users/views.py, users/urls.py
-Discussion App:
 
+
+Discussion App:
 Manages posts, including creation, modification, and deletion.
 Relevant files: discussions/models.py, discussions/serializers.py, discussions/views.py, discussions/urls.py
 Diagram
 
-Database Schema
+Database Schema:
+
 User Model
 ```python
 
@@ -84,7 +86,8 @@ class Comment(models.Model):
 
 ## Create User
 
-POST /api/users
+`POST /api/users`
+
 Request:
 ```json
 
@@ -106,7 +109,8 @@ Response:
 ```
 ## Update User
 
-PUT /api/users/:id
+`PUT /api/users/:id`
+
 Request:
 ```json
 {
@@ -123,7 +127,8 @@ Response:
 ```
 ## Delete User
 
-DELETE /api/users/:id
+`DELETE /api/users/:id`
+
 Response:
 ```json
 
@@ -133,7 +138,8 @@ Response:
 ```
 ## Show List of Users
 
-GET /api/users
+`GET /api/users`
+
 Response:
 ```json
 
@@ -146,7 +152,8 @@ Response:
 ```
 ## Search User by Name
 
-GET /api/users?name=John
+`GET /api/users?name=John`
+
 Response:
 ```json
 
@@ -158,9 +165,11 @@ Response:
 
 ```
 Post API
+
 ## Create Post
 
-POST /api/posts
+`POST /api/posts`
+
 Request:
 ```json
 {
@@ -183,7 +192,8 @@ Response:
 ```
 ## Update Post
 
-PUT /api/posts/:id
+`PUT /api/posts/:id`
+
 Request:
 ```json
 {
@@ -199,16 +209,18 @@ Response:
 ```
 Delete Post
 
-DELETE /api/posts/:id
+`DELETE /api/posts/:id`
 
 Response:
 ```json
 {
   "message": "Post deleted successfully"
 }
-Get Posts by Tag
 ```
-GET /api/posts?tag=world
+## Get Posts by Tag
+
+`GET /api/posts?tag=world`
+
 Response:
 ```json
 
@@ -219,9 +231,10 @@ Response:
   },
 
 ```
-Get Posts by Text
+## Get Posts by Text
 
-GET /api/posts?text=Hello
+`GET /api/posts?text=Hello`
+
 Response:
 ```json
 
@@ -236,7 +249,8 @@ Response:
 Interaction API
 ## Like Post
 
-POST /api/posts/:id/like
+`POST /api/posts/:id/like`
+
 Request:
 ```json
 {
@@ -252,7 +266,7 @@ Response:
 ```
 ## Comment on Post
 
-POST /api/posts/:id/comment
+`POST /api/posts/:id/comment`
 
 Request:
 ```json
@@ -274,7 +288,7 @@ Response:
 ```
 ## Like Comment
 
-POST /api/comments/:id/like
+`POST /api/comments/:id/like`
 
 Request:
 
